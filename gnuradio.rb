@@ -6,7 +6,7 @@ class Gnuradio < Formula
   head 'git://gnuradio.org/gnuradio/gnuradio.git'
 
   depends_on 'cmake' => :build
-  depends_on 'scipy' => :python
+  depends_on 'scipy' => "python"
   depends_on 'boost'
   depends_on 'fftw'
   depends_on 'pygtk'

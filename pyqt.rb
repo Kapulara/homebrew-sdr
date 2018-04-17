@@ -5,16 +5,16 @@ class Pyqt < Formula
   sha256 "f178ba12a814191df8e9f87fb95c11084a0addc827604f1a18a82944225ed918"
 
   option "without-python", "Build without python 2 support"
-  depends_on :python3 => :optional
-
-  if build.without?("python3") && build.without?("python")
-    odie "pyqt: --with-python3 must be specified when using --without-python"
+  depends_on "python@2" => :optional
+  
+  if build.without?("python") && build.without?("python")
+    odie "pyqt: --with-python must be specified when using --without-python"
   end
 
   depends_on "nejohnson2/sdr/qt"
 
-  if build.with? "python3"
-    depends_on "sip" => "with-python3"
+  if build.with? "python"
+    depends_on "sip" => "with-python"
   else
     depends_on "sip"
   end
